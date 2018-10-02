@@ -1,0 +1,12 @@
+<h2>Add person</h2>
+<form #personForm="ngForm">
+  <input type="text" placeholder="name" name="name" [(ngModel)]="person.name" #name><br>
+  <input type="number" placeholder="age" name="age" [(ngModel)]="person.age" #age><br>
+  <select name = "blood" [(ngModel)]="person.blood" #blood>
+    <option *ngFor="let blood of bloods" value="{{blood.name}}">{{blood.name}}</option>
+  </select><br>
+  <select name = "gender" [(ngModel)]="person.gender" #gender>
+    <option *ngFor="let gender of genders" value="{{gender.name}}">{{gender.name}}</option>
+  </select><br>
+</form>
+<button type="submit" (click)="save()">submit</button>
